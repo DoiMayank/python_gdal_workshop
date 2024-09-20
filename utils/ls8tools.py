@@ -138,10 +138,10 @@ def pansharpen(ms_dss, pan_ds, outname=None):
     if os.path.exists(outname):
         return gdal.Open(outname)
 
-    if 'win' in sys.platform:
-        command = ['python', os.path.join(os.path.dirname(sys.path[1]), 'Scripts', 'gdal_pansharpen.py'), pan_file]
-    else:
-        command = ['gdal_pansharpen.py', pan_file]
+    if 'win' in sys.platform:
+        command = ['python', os.path.join(os.path.dirname(sys.path[1]), 'Scripts', 'gdal_pansharpen.py'), pan_file]
+    else:
+        command = ['gdal_pansharpen.py', pan_file]
 
     for ds in ms_dss:
         ms_file = get_band_filename(ds.GetFileList())
